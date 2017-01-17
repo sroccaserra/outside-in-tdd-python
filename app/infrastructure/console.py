@@ -1,3 +1,4 @@
 class Console:
-    def print_line(self):
-        raise NotImplementedError()
+    @staticmethod
+    def print_line(line):
+        print(line)
