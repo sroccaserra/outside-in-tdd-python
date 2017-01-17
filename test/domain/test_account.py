@@ -10,7 +10,8 @@ class TestAccount:
     def setup_method(self):
         self.transaction_register = Mock(TransactionRegister)
         self.statement_reporter = Mock(StatementReporter)
-        self.account = BankAccount(self.transaction_register, self.statement_reporter)
+        self.account = BankAccount(self.transaction_register,
+                                   self.statement_reporter)
 
     def should_store_a_deposit(self):
         self.account.deposit(1000)
