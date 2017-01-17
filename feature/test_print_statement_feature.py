@@ -10,6 +10,7 @@ from app.infrastructure.transaction_in_memory_register import TransactionInMemor
 class TestPrintStatementFeature:
     def setup_method(self):
         clock = Mock(Clock)
+        clock.today_as_string.side_effect = ['01/04/2014', '02/04/2014', '10/04/2014']
         transaction_register = TransactionInMemoryRegister(clock)
 
         self.console = Mock(Console)

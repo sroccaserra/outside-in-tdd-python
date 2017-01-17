@@ -1,6 +1,6 @@
 .cache
 .coverage
-.idea
+.idea/
 
-*.pyc
-
+__pycache__/
+*.py[cod]
