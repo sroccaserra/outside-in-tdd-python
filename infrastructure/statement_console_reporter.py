@@ -1,4 +1,4 @@
-from app.domain.statement_reporter import StatementReporter
+from domain import StatementReporter
 
 
 class StatementConsoleReporter(StatementReporter):

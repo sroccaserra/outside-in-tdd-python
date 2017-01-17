@@ -1,9 +1,8 @@
 from unittest.mock import Mock, call
 
-from app.domain.transaction import Transaction
-from app.infrastructure.console import Console
-from app.infrastructure.statement_console_reporter\
-    import StatementConsoleReporter
+from domain import Transaction
+from infrastructure import Console
+from infrastructure import StatementConsoleReporter
 
 NO_TRANSACTIONS = []
 

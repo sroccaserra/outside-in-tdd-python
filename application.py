@@ -1,8 +1,8 @@
-from app.domain import BankAccount
-from app.infrastructure import Clock
-from app.infrastructure import Console
-from app.infrastructure import StatementConsoleReporter
-from app.infrastructure import TransactionInMemoryRegister
+from domain import BankAccount
+from infrastructure import Clock
+from infrastructure import Console
+from infrastructure import StatementConsoleReporter
+from infrastructure import TransactionInMemoryRegister
 
 
 def main():

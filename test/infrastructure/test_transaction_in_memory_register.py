@@ -1,11 +1,10 @@
 from unittest.mock import Mock
 
-from app.domain.transaction import Transaction
-from app.infrastructure.clock import Clock
-from app.infrastructure.transaction_in_memory_register \
-    import TransactionInMemoryRegister
+from domain import Transaction
+from infrastructure import Clock
+from infrastructure import TransactionInMemoryRegister
 
-TODAY_AS_STRING = "01/02/2012"
+TODAY_AS_STRING = '01/02/2012'
 
 
 class TestTransactionInMemoryRegister:

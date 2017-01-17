@@ -1,5 +1,5 @@
-from app.domain.transaction import Transaction
-from app.domain.transaction_register import TransactionRegister
+from domain import Transaction
+from domain import TransactionRegister
 
 
 class TransactionInMemoryRegister(TransactionRegister):

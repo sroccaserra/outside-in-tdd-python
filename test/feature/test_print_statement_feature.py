@@ -1,16 +1,20 @@
 from unittest.mock import Mock, call
 
-from app.domain.bank_account import BankAccount
-from app.infrastructure.clock import Clock
-from app.infrastructure.console import Console
-from app.infrastructure.statement_console_reporter import StatementConsoleReporter
-from app.infrastructure.transaction_in_memory_register import TransactionInMemoryRegister
+from domain import BankAccount
+from infrastructure import Clock
+from infrastructure import Console
+from infrastructure import StatementConsoleReporter
+from infrastructure import TransactionInMemoryRegister
 
 
 class TestPrintStatementFeature:
     def setup_method(self):
         clock = Mock(Clock)
-        clock.today_as_string.side_effect = ['01/04/2014', '02/04/2014', '10/04/2014']
+        clock.today_as_string.side_effect = [
+            '01/04/2014',
+            '02/04/2014',
+            '10/04/2014'
+        ]
         transaction_register = TransactionInMemoryRegister(clock)
 
         self.console = Mock(Console)

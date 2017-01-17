@@ -1,6 +1,6 @@
 from datetime import date
 
-from app.infrastructure.clock import Clock
+from infrastructure import Clock
 
 
 class TestableClock(Clock):
@@ -12,4 +12,4 @@ class TestableClock(Clock):
 class TestClock:
     def test_should_return_today_as_string(self):
         clock = TestableClock()
-        assert clock.today_as_string() == "17/02/1976"
+        assert clock.today_as_string() == '17/02/1976'

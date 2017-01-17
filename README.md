@@ -6,9 +6,9 @@ From:
 
 Create a simple bank application with the following fetaures:
 
-- Deposit into an Account
-- Withdraw from an Account
-- Print a bank statement to the console
+- Deposit into a BankAccount
+- Withdraw from a BankAccount
+- Print a bank account statement to the console
 
 ## Acceptance criteria
 
@@ -26,7 +26,7 @@ Statement should have transactions in the following format:
 1. Start with a class with the following structure:
 
 ```python
-class Account:
+class BankAccount:
     def deposit(self, amount):
         raise NotImplementedError()
 
@@ -86,7 +86,7 @@ See the `Makefile`.
 - Now that I know what the side effect is, I need to identify the trigger of
   the side effect.
 
-### Account
+### BankAccount
 
 - Why two methods: "I don't deposit -100, that doesn't make sense. Paying
   attention to that semantic is very important."
@@ -120,8 +120,8 @@ See the `Makefile`.
 
 ### Print statement
 
-- Retour au test d'`Account`
-- The `Account` class is a high level class, it should not know about the
+- Retour au test de `BankAccount`
+- The `BankAccount` class is a high level class, it should not know about the
   details of formating a statement.
 - Bien passer par l'étape `statement_printer.print()` n'est jamais appelée dans
   les tests.
@@ -129,7 +129,7 @@ See the `Makefile`.
 - Pourquoi avoir créé une classe `Transaction` ? Parce que c'est ce qu'on veut
   imprimer, et c'est ce que stocke le `Transactionrepository`. Si on regarde
   les specs, ce sera surement l'association date / montant. 
-- La classe `Account` est terminée, les méthodes sont au même niveau
+- La classe `BankAccount` est terminée, les méthodes sont au même niveau
   d'abstraction.
 - What to do next ⇐ feature test failure.
 
