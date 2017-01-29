@@ -2,5 +2,7 @@
 .coverage
 .idea/
 
+.python-version
+
 __pycache__/
 *.py[cod]

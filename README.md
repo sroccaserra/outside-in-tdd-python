@@ -4,7 +4,7 @@ From:
 
 ## Problem description - Bank kata
 
-Create a simple bank application with the following fetaures:
+Create a simple bank application with the following features:
 
 - Deposit into a BankAccount
 - Withdraw from a BankAccount
