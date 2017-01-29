@@ -50,7 +50,7 @@ Note: I cannot add query methods, I cannot query for the state.
 
 You need Python 3.4 or compatible. If you have pyenv installed, you can:
 
-    $ make pyenv
+    $ make env
 
 Once you have a compatible version of Python installed, you can install the
 requirements:
@@ -116,24 +116,24 @@ See the `Makefile`.
   store it... Defer some of it?
 - The account itself shoud not know how the transaction is stored ⇒ repository
   pattern
-- Dans le TU on mocke le `TransactionRepository`, pas dans l'acceptance test.
+- Dans le TU on mocke le `TransactionRegister`, pas dans l'acceptance test.
 
 ### Print statement
 
 - Retour au test de `BankAccount`
 - The `BankAccount` class is a high level class, it should not know about the
   details of formating a statement.
-- Bien passer par l'étape `statement_printer.print()` n'est jamais appelée dans
+- Bien passer par l'étape `statement_reporter.print()` n'est jamais appelée dans
   les tests.
 - Il y a eu beaucoup de décisions de design à cette étape.
 - Pourquoi avoir créé une classe `Transaction` ? Parce que c'est ce qu'on veut
-  imprimer, et c'est ce que stocke le `Transactionrepository`. Si on regarde
+  imprimer, et c'est ce que stocke le `TransactionRegister`. Si on regarde
   les specs, ce sera surement l'association date / montant. 
 - La classe `BankAccount` est terminée, les méthodes sont au même niveau
   d'abstraction.
 - What to do next ⇐ feature test failure.
 
-### TransactionRepository
+### TransactionRegister
 
 - In a real app, this would be an integrated test, inserting and querying the
   database. For the sake of this exercise, we create an in memory repository.
@@ -146,7 +146,7 @@ See the `Makefile`.
 - Dans le test d'acceptance, comme clock représente quelque chose d'extérieur
   au système qu'on ne contrôle pas et qu'on a besoin de contrôler, on mock la
   `Clock`.
-- La classe `TransactionRepository` est terminée.
+- La classe `TransactionRegister` est terminée.
 
 ### Clock
 
@@ -154,7 +154,7 @@ See the `Makefile`.
   `today()` à l'ancienne (TDD classique).
 - `Clock` done.
 
-### StatementPrinter
+### StatementReporter
 
 - Retour aux specs, le plus simple est de commencer par le header avec une
   liste de transactions vide.
